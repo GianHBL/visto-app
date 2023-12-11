@@ -1,63 +1,59 @@
-//Basic Import
 import React from "react";
 import {
     View,
     Text,
     StyleSheet,
     Image,
+    TouchableOpacity,
+
 } from "react-native";
 
-//Components Import
-import { useNavigation } from '@react-navigation/native';
-import LoginButton from "../../components/button";
-import FormInput from "../../components/input";
-import RegisterButton from "../../components/textButton";
-
-//Navigation Import
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function Register({ navigation }: { navigation: any }) {
+import HeaderMain from "../../components/headerMain";
+import FormInput from "../../components/input";
+
+import LoginButton from '../../components/button';
+import RegisterButton from '../../components/textButton';
+
+export default function NovoProprietario({ navigation } : { navigation: any}) {
     return (
         <View style={styles.container} >
+            <HeaderMain
+                text="Novo Proprietário"
+            />
             <View style={styles.containerForm}>
                 <View style={styles.formTitle}>
                     <Text style={styles.title}>
-                        Criar uma conta
+                        Endereço do Proprietário
                     </Text>
                     <Text style={styles.subtitle}>
-                        Insira seus dados para continuar
+                        Insira os dados para continuar
                     </Text>
                 </View>
                 <View style={styles.form}>
                     <FormInput
-                        placeholder="Digite seu nome"
+                        placeholder="Nome do Proprietário"
                         secureTextEntry={false}
                     />
                     <FormInput
-                        placeholder="Digite seu email"
+                        placeholder="Email do Proprietário"
                         secureTextEntry={false}
                     />
 
                     <FormInput
-                        placeholder="Digite seu telefone"
+                        placeholder="Telefone do Proprietário"
                         secureTextEntry={false}
                     />
                     <FormInput
-                        placeholder="Digite sua senha"
-                        secureTextEntry={true}
+                        placeholder="CPF do Proprietário"
+                        secureTextEntry={false}
                     />
                     <LoginButton
                         textBtn="Cadastrar"
                         onPress={() => navigation.navigate('Tabs')}
                     />
-                    <RegisterButton
-                        text="Já possui uma conta?"
-                        textBtn="Login"
-                        onPress={() => navigation.navigate('Login')}
-                    />
-                </View>
-                <View>
                 </View>
             </View>
 
@@ -68,16 +64,15 @@ export default function Register({ navigation }: { navigation: any }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#fff',
     },
 
     containerForm: {
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+        paddingTop: 40,
     },
 
     formTitle: {

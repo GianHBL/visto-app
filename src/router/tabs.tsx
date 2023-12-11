@@ -5,20 +5,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons } from '@expo/vector-icons';
 
-
 //Pages Imports
 import Home from '../pages/home/home';
 import Vistoria from '../pages/vistoria/vistoria';
 import Imovel from '../pages/imovel/imovel';
-import Propietario from '../pages/proprietario/proprietario';
+import Proprietario from '../pages/proprietario/proprietario';
 
 //Components Imports
 import MyTabBar from '../components/customTabBar';
 
-//Tab Navigator
 const Tab = createBottomTabNavigator();
 
-//Tab Navigator Function
 export default function Tabs() {
   return (
     <Tab.Navigator
@@ -48,7 +45,7 @@ export default function Tabs() {
         name="Vistoria"
         component={Vistoria}
         options={{
-          tabBarIcon: "assignment",
+          tabBarIcon: "assignment"
         }}
       />
       <Tab.Screen 
@@ -59,8 +56,8 @@ export default function Tabs() {
         }}
       />
       <Tab.Screen 
-        name="Propietario" 
-        component={Propietario} 
+        name="Proprietario" 
+        component={Proprietario} 
         options={{
           tabBarIcon: "person",
         }}
